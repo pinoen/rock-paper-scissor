@@ -20,9 +20,14 @@
         const playerSelection = prompt('Please, choose: rock, paper or scissor?').toLowerCase();
         console.log(`The player choose is ${playerSelection}`);
 
-
-
-
+        function playRound(playerSelection, computerSelection){
+        if(playerSelection === 'rock' && computerSelection === 'scissor') return 'You win! Rock beats scissor';
+        if(playerSelection === 'paper' && computerSelection === 'rock') return 'You win! Paper beats rock';
+        if(playerSelection === 'scissor' && computerSelection === 'paper') return 'You win! Scissor beats paper!';
+        if(playerSelection === computerSelection) return 'This is a tie!'
+        else return 'You lose! The computer won!';             
+        }
+        console.log(playRound(playerSelection, computerSelection));
 
     </script>
     
