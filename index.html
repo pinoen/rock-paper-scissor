@@ -4,104 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body{
-            font-family: 'Courier New', Courier, monospace;
-        }
-        h1 {
-            text-decoration: underline; 
-            color: red; 
-            font-size: xx-large; 
-            font-weight: bolder;
-        }
-        p{
-            color: orange; 
-            font-size: large; 
-            font-weight: bold;
-        }
-        button{
-            width: 200px;
-            height: 100px;
-            border-radius: 25px;
-            background-color: antiquewhite;
-            margin: 30px;
-            font-size: x-large;
-        }
-        .container{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        button:hover{
-            cursor: pointer;
-            color: red;
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 
     <title>Rock Paper Scissor</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Rock Paper Scissor</h1>
-        <p>THIS GAME IS MEANT TO BE PLAY INSIDE THE BROWSER'S CONSOLE. IN ORDER TO PLAY IT, 
-            PLEASE PRESS CTR + SHIFT + J AND THEN PRESS THE BUTTON BELOW TO START A GAME.
-            PRIOR TO PLAY ANOTHER ROUND, REFESH THE PAGE.</p>
-        <button onclick="game();">START GAME</button>
+    <h1>Rock Paper Scissor</h1>
+    <p>CHOOSE AN OPTION:</p>
+
+    <div class="options">
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissor">Scissor</button>
     </div>
 
-    <script>
+    <div class="results">
+        <p id="userChoice">Your choice was:</p>
+        <p id="computerChoice">The machine choice was:</p>
+        <p id="result">Results:</p>
+    </div>
 
-        let options = ['rock', 'paper', 'scissor'];
-        let playerCount = 0;
-        let computerCount = 0;
-        let tieCount = 0;
-
-
-        function computerSelection(){
-            return options[Math.floor(Math.random() * options.length)];
-        }
+    <span id="winner"></span>
 
 
-        function playerSelection(){
-            return prompt('Please, choose: rock, paper or scissor?').toLowerCase();
-        }
 
 
-        function checkWinner(human, machine){
-            if(human === 'rock' && machine === 'scissor') return 'You win! Rock beats scissor';
-            if(human === 'paper' && machine === 'rock') return 'You win! Paper beats rock';
-            if(human === 'scissor' && machine === 'paper') return 'You win! Scissor beats paper!';
-            if(human === machine) return 'This is a tie!'
-            else return 'You lose! The computer won!';             
-        }
-
-
-        function playRound(){
-            const computer = computerSelection();
-            const player = playerSelection();
-            const winner = checkWinner(player, computer);
-            console.log(winner);
-            return winner;
-        }
-
-
-        function game(){
-            for(let i=1; i<=5; i++){
-                let result = playRound();
-                if(result === 'This is a tie!') tieCount++; 
-                else if(result === 'You lose! The computer won!') computerCount++;
-                else playerCount++;
-            }
-            console.log(`
-                    Player points: ${playerCount}.
-                    Computer points: ${computerCount}.
-                    Ties: ${tieCount}.
-                    `);     
-        }
-
-    </script>
+    <script src="logic.js"></script>
     
 </body>
 </html>

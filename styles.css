@@ -1,0 +1,41 @@
+body{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+h1 {
+    text-decoration: underline; 
+    color: red; 
+    font-size: xx-large; 
+    font-weight: bolder;
+
+}
+p{
+    color: orange; 
+    font-size: large; 
+    font-weight: bold;
+}
+button{
+    width: 200px;
+    height: 100px;
+    border-radius: 25px;
+    background-color: antiquewhite;
+    margin: 30px;
+    font-size: x-large;
+}
+.options{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.results{
+    text-align: center;
+}
+button:hover{
+    cursor: pointer;
+    color: red;
+}
+
+#winner{
+    font-size: 25px;
+}
