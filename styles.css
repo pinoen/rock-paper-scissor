@@ -5,8 +5,7 @@ body{
 h1 {
     text-decoration: underline; 
     color: red; 
-    font-size: xx-large; 
-    font-weight: bolder;
+    font-size: x-large;
 
 }
 p{
@@ -15,11 +14,11 @@ p{
     font-weight: bold;
 }
 button{
-    width: 200px;
-    height: 100px;
+    width: 125px;
+    height: 75px;
     border-radius: 25px;
     background-color: antiquewhite;
-    margin: 30px;
+    margin: 20px;
     font-size: x-large;
 }
 .options{
@@ -29,7 +28,14 @@ button{
 }
 
 .results{
+    display: flex;
+    justify-content: space-around;
     text-align: center;
+    border: 1px solid red;
+    margin: 20px;
+}
+ul{
+    list-style-type: none;
 }
 button:hover{
     cursor: pointer;
@@ -37,5 +43,15 @@ button:hover{
 }
 
 #winner{
-    font-size: 25px;
+    font-size: 20px;
+    margin: 20px;
+    display: block;
+}
+
+#final{
+    font-size: 30px;
+    font-style: bold;
+    color: lightcoral;
+    padding: 5px;
+    border: 1px dashed red;
 }

@@ -31,13 +31,25 @@ userClick.addEventListener('click', (e)=>{
     computerSelection = options[Math.floor(Math.random() * options.length)];
 
     let pUserChoice = document.querySelector('#userChoice');
-    pUserChoice.textContent += ' ' + playerSelection;
+    let newLi = document.createElement('li');
+    let newText = document.createElement('span');
+    pUserChoice.appendChild(newLi);
+    pUserChoice.appendChild(newText);
+    newText.textContent += ' ' + playerSelection;
 
     let pComputerChoice = document.querySelector('#computerChoice');
-    pComputerChoice.textContent += ' ' + computerSelection;
+    let newLiPc = document.createElement('li');
+    let newTextPc = document.createElement('span');
+    pComputerChoice.appendChild(newLiPc);
+    pComputerChoice.appendChild(newTextPc);
+    newTextPc.textContent += ' ' + computerSelection;
     
     let pWinner = document.querySelector('#result');
-    pWinner.textContent += ' ' + playRound();
+    let newLiRound = document.createElement('li');
+    let newTextRound = document.createElement('span');
+    pWinner.appendChild(newLiRound);
+    pWinner.appendChild(newTextRound);
+    newTextRound.textContent += ' ' + playRound();
 
     let result = playRound();
     if(result === 'This is a tie!') tieCount++; 
@@ -45,11 +57,22 @@ userClick.addEventListener('click', (e)=>{
     else playerCount++;
 
     let winner = document.querySelector('#winner');
+    let final = document.querySelector('#final');
     if(playerCount === 5 || computerCount === 5 || tieCount === 5){
+        if(playerCount > computerCount && playerCount > tieCount) {
+            final.textContent = 'You win! Congrats!';
+        } else if(computerCount > playerCount && computerCount > tieCount){
+            final.textContent = 'Computer win! Keep trying!';
+        } else {
+            final.textContent = 'It was a tie!';
+        }  
         winner.textContent = `
             Player points: ${playerCount}.
             Computer points: ${computerCount}.
             Ties: ${tieCount}.
             `
-    }  
+    } 
 });
+
+
+
