@@ -64,7 +64,7 @@ userClick.addEventListener('click', (e)=>{
         } else if(computerCount > playerCount && computerCount > tieCount){
             final.textContent = 'Computer win! Keep trying!';
         } else {
-            final.textContent = 'It was a tie!';
+            final.textContent = 'It looks like there were more ties!';
         }  
         winner.textContent = `
             Player points: ${playerCount}.
