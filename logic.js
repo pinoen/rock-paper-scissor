@@ -51,6 +51,21 @@ userClick.addEventListener('click', (e)=>{
     pWinner.appendChild(newTextRound);
     newTextRound.textContent += ' ' + playRound();
 
+    let playAgain = document.querySelector('#playAgain');
+    playAgain.addEventListener('dblclick', ()=>{
+        newText.textContent = '';
+        newTextPc.textContent = '';
+        newTextRound.textContent = '';
+        final.textContent = '';
+        winner.textContent = '';
+        playerCount = 0;
+        computerCount = 0;
+        tieCount = 0;
+        playAgain.style.display = 'none';
+    })
+
+
+
     let result = playRound();
     if(result === 'This is a tie!') tieCount++; 
     else if(result === 'You lose! The computer won!') computerCount++;
@@ -59,6 +74,7 @@ userClick.addEventListener('click', (e)=>{
     let winner = document.querySelector('#winner');
     let final = document.querySelector('#final');
     if(playerCount === 5 || computerCount === 5 || tieCount === 5){
+        playAgain.style.display = 'flex';
         if(playerCount > computerCount && playerCount > tieCount) {
             final.textContent = 'You win! Congrats!';
         } else if(computerCount > playerCount && computerCount > tieCount){
@@ -71,8 +87,10 @@ userClick.addEventListener('click', (e)=>{
             Computer points: ${computerCount}.
             Ties: ${tieCount}.
             `
-    } 
+    }   
 });
+
+
 
 
 

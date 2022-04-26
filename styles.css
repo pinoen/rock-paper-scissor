@@ -62,6 +62,24 @@ button:hover{
     border: 1px dashed red;
 }
 
+.again{
+    display: flex;
+    justify-content: space-evenly;
+}
+#playAgain{
+    display: none;
+    align-self: center;
+    width: 405px;
+    height: 50px;
+    font-size: medium;
+    margin-right: 400px;
+    padding: 10px;
+}
+#playAgain:hover{
+    background-color: black;
+    color: white;
+}
+
 footer p{
     text-align: center;
     margin-top: 10px;
