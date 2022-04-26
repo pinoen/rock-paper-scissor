@@ -1,3 +1,9 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 body{
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
@@ -62,14 +68,13 @@ footer p{
     color: whitesmoke;
     padding: 30px;
     font-size: small;
-    /* position: fixed; */
-    margin-bottom: 0px;
   }
   #pie-pagina{
     background: url(bg.jpg);
     height: 100%;
     width: 100%;
   }
+
   a{
     text-decoration: none;
     color: white;
