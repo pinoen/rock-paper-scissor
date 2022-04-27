@@ -101,4 +101,8 @@ footer p{
     font-weight: bolder;
   }
 
-  
+  @media (max-width: 640px){
+    #playAgain{
+        height: 100px;
+    }
+}  
