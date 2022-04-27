@@ -69,10 +69,9 @@ button:hover{
 #playAgain{
     display: none;
     align-self: center;
-    width: 405px;
+    width: 200px;
     height: 50px;
     font-size: medium;
-    margin-right: 400px;
     padding: 10px;
 }
 #playAgain:hover{
@@ -101,3 +100,5 @@ footer p{
     cursor:pointer;
     font-weight: bolder;
   }
+
+  
